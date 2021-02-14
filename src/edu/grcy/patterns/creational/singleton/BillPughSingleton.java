@@ -1,10 +1,10 @@
 package edu.grcy.patterns.creational.singleton;
 
 public class BillPughSingleton {
-
 	private BillPughSingleton() {
 		System.out.println("Object initialisation");
 	}
+
 
 	private static class SingletonHelper {
 

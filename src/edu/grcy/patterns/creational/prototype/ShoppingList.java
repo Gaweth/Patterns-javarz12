@@ -4,33 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingList implements Cloneable{
-	private List<String> shoppingList;
+	private List<String> shopping;
 
+	//konstruktor do dobiektu wzorcowego
 	public ShoppingList(){
-		shoppingList = new ArrayList<>();
+		shopping = new ArrayList<>();
+		loadInitialData();
 	}
 
+	//konstruktor do otrzymywania kopii
 	public ShoppingList(List<String> list){
-		this.shoppingList=list;
+		this.shopping =list;
 	}
 
-	public void loadData(){
-		shoppingList.add("ser");
-		shoppingList.add("pomidory");
-		shoppingList.add("chleb");
+	public void loadInitialData(){
+		shopping.add("ser");
+		shopping.add("pomidory");
+		shopping.add("chleb");
 	}
 
-	public List<String> getShoppingList() {
-		return shoppingList;
+	public void setShopping(List<String> shopping) {
+		this.shopping = shopping;
+	}
+
+	public List<String> getShopping() {
+		return shopping;
 	}
 
 	@Override
 	public Object clone() throws CloneNotSupportedException{
-		List<String> temp = new ArrayList<>();
-		for(String s : this.getShoppingList()){
-			temp.add(s);
-		}
-		return new ShoppingList(temp);
+		List<String> localList = new ArrayList<>();
+
+		//lokalna kopia listy domyslnej
+		// zeby uniknac sytuacji w trakcie robieania
+		//clona lista zostanie zmieniona
+		localList.addAll(shopping);
+		return new ShoppingList(localList);
 	}
 }
 

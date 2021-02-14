@@ -2,28 +2,28 @@ package edu.grcy.patterns.creational.factory;
 
 public class MacBookPro extends MacBook {
 
-	private String name;
-	private String par1;
-	private int par2;
+	private String memory;
+	private String disc;
+	private int screenSize;
 
-	public MacBookPro(String name, String par1, int par2) {
-		this.name = name;
-		this.par1 = par1;
-		this.par2 = par2;
+	public MacBookPro(String memory, String par1, int par2) {
+		this.memory = memory;
+		this.disc = disc;
+		this.screenSize = screenSize;
 	}
 
 	@Override
 	public String getMemory() {
-		return name;
+		return memory;
 	}
 
 	@Override
 	public String getDisk() {
-		return par1;
+		return disc;
 	}
 
 	@Override
 	public int getScreenSize() {
-		return par2;
+		return screenSize;
 	}
 }
