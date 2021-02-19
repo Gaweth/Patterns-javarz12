@@ -1,8 +1,8 @@
 package edu.grcy.patterns.structural.composite;
 
-	public interface Shape {
+public interface Shape {
 
-		public void draw(String fillColor);
-	}
+	void draw(String fillColor);
+}
 
 

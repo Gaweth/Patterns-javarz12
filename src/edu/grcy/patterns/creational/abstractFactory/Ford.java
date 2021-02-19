@@ -8,6 +8,6 @@ public abstract class Ford {
 
 	@Override
 	public String toString(){
-		return "Name="+this.getName()+", getEngine="+this.getEngine()+", getAddonds="+this.getAddons();
+		return "Name="+this.getName()+", getEngine="+this.getEngine()+", getAddons="+this.getAddons();
 	}
 }

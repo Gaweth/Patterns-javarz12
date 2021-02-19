@@ -4,30 +4,29 @@ public class TaskService {
     Repository repository;
 
     /**
-     * Dependency Ujection polega na wstrzyknieciu zaleznosci inaczej pol klasy
+     * Dependency Injection polega na wstrzyknięciu zależności (inaczej pól klasy)
      * np. przez konstruktor
      *
-     * przy DI nie uzywami w klsanie "new" do inicjowania "skladowych"
-     * tylko chcemy je w jakis sposob dostac z zewnatrz
+     * przy DI nie używamy w klasie "new" do inicjowania obiektów "składowych"
+     * tylko chcemy je w jakiś sposób dostać z zewnątrz
      */
-
-    public TaskService(Repository repository){
-        this.repository=repository;
+    public TaskService(Repository repository) {
+        this.repository = repository;
     }
 
     public void addTask(String task) {
         repository.saveTask(task);
     }
 
-    public void removeTask(String task){
+    public void removeTask(String task) {
         repository.deleteTask(task);
     }
 
     /**
-     * Setter to tez jest sposob na depednecy injection
+     * Setter to też jest sposób na Dependency Injection
+     *
      */
-
-    public void setRepository(Repository repository){
+    public void setRepository(Repository repository) {
         this.repository = repository;
     }
 }

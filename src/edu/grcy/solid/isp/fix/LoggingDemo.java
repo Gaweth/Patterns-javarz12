@@ -5,31 +5,28 @@ public class LoggingDemo {
         //readable logger zapisuje i odczytuje
         ReadableLogger readableLogger = new FileLogger();
 
-        readableLogger.writerMessage("aaaaaa");
-        readableLogger.writerMessage("dgffg");
-        readableLogger.writerMessage("aasdD");
-        readableLogger.writerMessage("fghd");
-        readableLogger.writerMessage("fgf");
-        readableLogger.writerMessage("   ");
+        readableLogger.writeMessage("aaaa");
+        readableLogger.writeMessage("b");
+        readableLogger.writeMessage("cc");
+        readableLogger.writeMessage("  ");
 
-        System.out.println("odczyt zawartosci logga");
+        System.out.println("Odczyt zawartości loga:");
         readableLogger.readMessages().forEach(System.out::println);
 
-        //loger tylko zapisje
+        //logger tylko zapisuje
         Logger logger = new ConsoleLogger();
-        logger.writerMessage("dgf");
-        logger.writerMessage("sdaf");
-        logger.writerMessage("sdg");
-        logger.writerMessage("bcxv");
+        logger.writeMessage("xxx");
+        logger.writeMessage("t");
+        logger.writeMessage("yy");
+        logger.writeMessage("qqq");
 
         /**
-         * FileLogger mzoe byuc implmentacja logger
+         * FileLogger może być implementacją Loggera
          */
         Logger anotherLogger = new FileLogger();
-        anotherLogger.writerMessage("messsage");
-        //jesli chcemy odczytac to robimy explicite rzutowanie
-        //ale tak nie powinnismy robic
+        anotherLogger.writeMessage("message");
+        //jeśli chcemy odczytać to robimy explicite rzutowanie
+        //ale tak nie powinniśmy robić
         ((ReadableLogger) anotherLogger).readMessages();
-
     }
 }

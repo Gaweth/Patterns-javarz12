@@ -3,42 +3,41 @@ package edu.grcy.patterns.creational.prototype;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShoppingList implements Cloneable{
-	private List<String> shopping;
+public class ShoppingList implements Cloneable {
+	private List<String> shoppings;
 
-	//konstruktor do dobiektu wzorcowego
-	public ShoppingList(){
-		shopping = new ArrayList<>();
+	//konstruktor do obiektu wzorcowego
+	public ShoppingList() {
+		shoppings = new ArrayList<>();
 		loadInitialData();
 	}
 
 	//konstruktor do otrzymywania kopii
-	public ShoppingList(List<String> list){
-		this.shopping =list;
+	public ShoppingList(List<String> list) {
+		this.shoppings =list;
 	}
 
-	public void loadInitialData(){
-		shopping.add("ser");
-		shopping.add("pomidory");
-		shopping.add("chleb");
+	public void loadInitialData() {
+		shoppings.add("ser");
+		shoppings.add("pomidory");
+		shoppings.add("chleb");
 	}
 
-	public void setShopping(List<String> shopping) {
-		this.shopping = shopping;
+	public List<String> getShoppings() {
+		return shoppings;
 	}
 
-	public List<String> getShopping() {
-		return shopping;
+	public void setShoppings(List<String> shoppings) {
+		this.shoppings = shoppings;
 	}
 
 	@Override
 	public Object clone() throws CloneNotSupportedException{
 		List<String> localList = new ArrayList<>();
-
-		//lokalna kopia listy domyslnej
-		// zeby uniknac sytuacji w trakcie robieania
-		//clona lista zostanie zmieniona
-		localList.addAll(shopping);
+		//lokalna kopia listy domyślnej
+		//żeby uniknąć sytuacji
+		//gdzie w trakcie robienia klona lista domyślna zostanie zmieniona
+		localList.addAll(shoppings);
 		return new ShoppingList(localList);
 	}
 }

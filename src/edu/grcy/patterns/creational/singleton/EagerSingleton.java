@@ -1,19 +1,19 @@
 package edu.grcy.patterns.creational.singleton;
 
-//Eager oznaczna utworzenie "od razu"
+//Eager oznacza utworzenie "od razu"
 public class EagerSingleton {
-
-	//prywatne pole klast EagerSingleton - od razu inicjowane
+	//prywatne pole klasy EagerSingleton - od razu inicjowane
 	private static final EagerSingleton INSTANCE = new EagerSingleton();
-	private String  otherField;
-	//prywatny konstruktor - czyli z zewnatrz nie utworzymy nowego obiektu **
-	// * no chyba ze np. REFLEKCJA
+	private String otherField;
+
+	//prywatny konstruktor - czyli z zewnątrz nie utworzymy nowego obiektu *
+	// * no chyba że np. REFLEKSJĄ
 	private EagerSingleton(){
 		System.out.println("Eager singleton initialisation");
 		otherField = "aaa";
 	}
 
-	//publiczna metoda wystawiajaca utworzeone wczesniej pole
+	//publicza metoda wystawiająca utworzone wcześniej pole
 	public static EagerSingleton getInstance(){
 		System.out.println("Get instance");
 		return INSTANCE;
@@ -23,5 +23,6 @@ public class EagerSingleton {
 		return otherField;
 	}
 
-	// ..... kolejne pola i metody
+	// ... kolejne pola i metody
+
 }

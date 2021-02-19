@@ -1,8 +1,9 @@
 package edu.grcy.solid.ocp.fixed;
 
-public class FileLogger implements MessageLogger{
+public class FileLogger implements MessageLogger {
+
     @Override
     public void log(String message) throws Exception {
-        System.out.println("writting to file: " + message);
+        System.out.println("Writing to file: " + message);
     }
 }

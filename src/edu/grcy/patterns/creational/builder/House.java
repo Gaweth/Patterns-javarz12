@@ -5,6 +5,7 @@ public class House {
 	private String basement;
 	private String walls;
 	private String roof;
+
 	private String garage;
 	private String garden;
 
@@ -32,24 +33,21 @@ public class House {
 		return garage;
 	}
 
-	public String getGarden() {return garden; }
-
 	public String getHouseInfo() {
-		return "House " + basement + " " + ", walls  " + walls + " roof " + roof +
-				(garage!=null ? ", garage " + garage :"")+
-				(garden!=null ? ", garden " + garden :"")+
+		return "House: basement: " + basement + ", walls: " + walls + ", roof: " + roof +
+				(garage != null ? ", garage: " + garage : "") +
+				(garden != null ? ", garden: " + garden : "") +
 				".";
 	}
-
 
 	public static class HouseBuilder {
 
 		private String basement;
 		private String walls;
 		private String roof;
+
 		private String garage;
 		private String garden;
-
 
 		public HouseBuilder(String basement, String walls, String roof) {
 			this.basement = basement;
@@ -57,7 +55,7 @@ public class House {
 			this.roof = roof;
 		}
 
-		public HouseBuilder getGarage(String garage) {
+		public HouseBuilder withGarage(String garage) {
 			this.garage = garage;
 			return this;
 		}

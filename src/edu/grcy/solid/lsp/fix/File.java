@@ -1,6 +1,6 @@
 package edu.grcy.solid.lsp.fix;
 
-public class File implements  FileReadable, FileWritable{
+public class File implements FileReadable, FileWritable {
     @Override
     public byte[] read() {
         return new byte[0];
@@ -8,6 +8,6 @@ public class File implements  FileReadable, FileWritable{
 
     @Override
     public void write(String message) {
-        System.out.println("writting: " + message);
+        System.out.println("writing: " + message);
     }
 }

@@ -1,26 +1,25 @@
 package edu.grcy.patterns.creational.builder;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
 public class HouseBuilderDemo {
     public static void main(String[] args) {
 
-        House smallHouse = new House.HouseBuilder("blocks", "Solber", "blacha").build();
+        House smallHouse = new House.HouseBuilder("bloczki", "solbet", "blacha").build();
 
-        House vilageHouse = new House.HouseBuilder("wylewany", "cegla", "papadachowka").withGarden("dzialka na warzywa").build();
+        House villageHouse = new House.HouseBuilder("wylewany", "cegła", "papodachówka")
+                .withGarden("działka na warzywa").build();
 
-        House residence = new House.HouseBuilder("wylewany + bloczki", "balle drewniane", "dachowka").withGarden("park z baseben").getGarage("wolnostojacy"). build();
+        House residence = new House.HouseBuilder("wylewany + bloczki", "bale drewniane", "dachówka")
+                .withGarden("park z basenem")
+                .withGarage("wolnostojący, dwustanowiskowy").build();
 
-        House mediumHouse = new House.HouseBuilder("jakis", "brak", "dziurawy").withGarden("dziura w ziemi").getGarage("stodola").build();
+        House mediumHouse = new House.HouseBuilder("bloczki", "max", "blacha")
+                .withGarage("w bryle budynku")
+                .withGarden("plac zabaw i mała rabatka").build();
 
-        List<House> houses = Arrays.asList(smallHouse, vilageHouse,residence,mediumHouse);
+        List<House> houses = Arrays.asList(smallHouse, villageHouse, residence, mediumHouse);
         houses.forEach(x -> System.out.println("\n" + x.getHouseInfo()));
-
-
-
-
     }
-
 }

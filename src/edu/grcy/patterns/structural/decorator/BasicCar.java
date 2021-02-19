@@ -1,9 +1,9 @@
 package edu.grcy.patterns.structural.decorator;
 
-public class BasicItem implements Item{
+public class BasicCar implements Car {
 
 	@Override
 	public void assemble() {
-		System.out.print("Basic Item.");
+		System.out.println("Assemble of Basic Car.");
 	}
 }

@@ -6,7 +6,7 @@ public class FileLoggerUsage {
         Logger anotherApp = new Logger(messageLogger);
 
         try {
-            anotherApp.log("sth diffrent");
+            anotherApp.log("Sth different");
         } catch (Exception e) {
             e.printStackTrace();
         }

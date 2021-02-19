@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class FileLogger implements  ReadableLogger {
+public class FileLogger implements ReadableLogger {
 
     private Collection<String> messages = new ArrayList<>();
 
     @Override
     public Collection<String> readMessages() {
-       if (messages.isEmpty()){
-           return Collections.EMPTY_LIST;
-       }
+        if (messages.isEmpty()) {
+            return Collections.EMPTY_LIST;
+        }
         return messages;
     }
 
     @Override
-    public void writerMessage(String message) {messages.add(message);
-        System.out.println("writting new message to collction");
+    public void writeMessage(String message) {
+        messages.add(message);
+        System.out.println("Writing new message to file");
     }
 }

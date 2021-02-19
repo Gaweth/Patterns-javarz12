@@ -2,15 +2,18 @@ package edu.grcy.patterns.structural.bridge;
 // Java code to demonstrate
 // bridge design pattern
 
+import edu.grcy.patterns.behavioral.chainOfResponsibility.AccessCheck;
+
+import java.util.Arrays;
+import java.util.List;
+
 // abstraction in bridge pattern
 abstract class Vehicle {
-	protected Workshop workShop1;
-	protected Workshop workShop2;
+	protected List<Workshop> workShops;
 
-	protected Vehicle(Workshop workShop1, Workshop workShop2)
+	protected Vehicle(List<Workshop> workShops)
 	{
-		this.workShop1 = workShop1;
-		this.workShop2 = workShop2;
+		this.workShops = workShops;
 	}
 
 	abstract public void manufacture();
@@ -18,33 +21,31 @@ abstract class Vehicle {
 
 // Refine abstraction 1 in bridge pattern
 class Car extends Vehicle {
-	public Car(Workshop workShop1, Workshop workShop2)
+	public Car(List<Workshop> workShops)
 	{
-		super(workShop1, workShop2);
+		super(workShops);
 	}
 
 	@Override
 	public void manufacture()
 	{
 		System.out.print("Car ");
-		workShop1.work();
-		workShop2.work();
+		workShops.forEach(Workshop::work);
 	}
 }
 
 // Refine abstraction 2 in bridge pattern
 class Bike extends Vehicle {
-	public Bike(Workshop workShop1, Workshop workShop2)
+	public Bike(List<Workshop> workShops)
 	{
-		super(workShop1, workShop2);
+		super(workShops);
 	}
 
 	@Override
 	public void manufacture()
 	{
 		System.out.print("Bike ");
-		workShop1.work();
-		workShop2.work();
+		workShops.forEach(Workshop::work);
 	}
 }
 
@@ -69,7 +70,15 @@ class Assemble implements Workshop {
 	public void work()
 	{
 		System.out.print(" And");
-		System.out.println(" Assembled.");
+		System.out.println(" Assembled");
+	}
+}
+
+class Paint implements  Workshop {
+	@Override
+	public void work() {
+		System.out.print(" And");
+		System.out.println(" Painted");
 	}
 }
 
@@ -77,9 +86,12 @@ class Assemble implements Workshop {
 class BridgePattern {
 	public static void main(String[] args)
 	{
-		Vehicle vehicle1 = new Car(new Produce(), new Assemble());
+		List<Workshop> carWorkshops = Arrays.asList(new Produce(), new Assemble(), new Paint());
+		Vehicle vehicle1 = new Car(carWorkshops);
 		vehicle1.manufacture();
-		Vehicle vehicle2 = new Bike(new Produce(), new Assemble());
+		System.out.println("=====================");
+		List<Workshop> bikeWorkshops = Arrays.asList(new Produce(), new Assemble());
+		Vehicle vehicle2 = new Bike(bikeWorkshops);
 		vehicle2.manufacture();
 	}
 }

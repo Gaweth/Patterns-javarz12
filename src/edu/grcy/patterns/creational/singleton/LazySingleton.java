@@ -1,8 +1,7 @@
 package edu.grcy.patterns.creational.singleton;
 
-//lazy czeli "inicjowanie przy pierwszym uzyciu"
+//Lazy czyli "inicjowanie przy pierwszym użyciu"
 public class LazySingleton {
-
 
 	private static LazySingleton instance;
 
@@ -11,20 +10,15 @@ public class LazySingleton {
 	}
 
 	public static LazySingleton getInstance(){
-		//przy pierwszym wywolaniu getInstance() nastapi utworzenie obiektu przez konstruktor
+		//przy pierwszym wywołaniu getInstance() nastąpi utworzenie obiektu przez konstruktor
 		if (instance == null){
 			/**
-			 * lazy Singleton nie powinien byc uzywany w aplikacjach wielowatkowych bo
-			 * kilka watkow moze utworzyc odrebne instacje obiektu
-			 * klasy
+			 * Lazy Singleton nie powinien być używany w aplikacjach
+			 * wielowątkowych bo kilka wątków może utworzyć odrębne instancje klasy
 			 */
-
-
 			instance = new LazySingleton();
 		}
 		return instance;
 	}
-
-
 
 }

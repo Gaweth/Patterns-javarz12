@@ -6,17 +6,17 @@ public class ConsoleLoggerMain {
         Logger logger = new Logger(messageLogger);
 
         try {
-            logger.log("aaaaaaaa");
+            logger.log("aaaaaaa");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        System.out.println("======================");
+        System.out.println("=================");
 
         MessageLogger messageLoggerForDb = new DatabaseLogger();
         Logger anotherLogger = new Logger(messageLoggerForDb);
         try {
-            anotherLogger.log("bbbbbbbbb");
+            anotherLogger.log("bbbbb");
         } catch (Exception e) {
             e.printStackTrace();
         }

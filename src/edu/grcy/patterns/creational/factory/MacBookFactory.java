@@ -4,8 +4,8 @@ public class MacBookFactory {
 
 	public static MacBook getMacBook(String type, String memory, String disc, int screenSize){
 
-		//fabryka jest ok jesli mamy stala liczbe klasy
-		// dla ktorych bedziemy tworzyc obiekty
+		//fabryka jest ok jeśli mamy stałą, niezmienną liczbę klas
+		//dla których będziemy tworzyć obiekty
 		if("Air".equalsIgnoreCase(type))
 			return new MacBookAir(memory, disc, screenSize);
 		else if("Pro".equalsIgnoreCase(type))
@@ -13,9 +13,5 @@ public class MacBookFactory {
 
 		return null;
 	}
-
-
-	}
-
-
+}
 

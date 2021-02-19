@@ -1,7 +1,6 @@
 package edu.grcy.solid.isp.fix;
 
+@FunctionalInterface
 public interface Logger {
-    void writerMessage(String message);
-
-
+    void writeMessage(String message);
 }

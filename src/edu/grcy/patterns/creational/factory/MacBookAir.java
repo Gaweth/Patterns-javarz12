@@ -12,7 +12,6 @@ public class MacBookAir extends MacBook {
 		this.screenSize = par2;
 	}
 
-
 	@Override
 	public String getMemory() {
 		return memory;

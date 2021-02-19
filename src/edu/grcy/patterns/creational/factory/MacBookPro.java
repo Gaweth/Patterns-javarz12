@@ -6,7 +6,7 @@ public class MacBookPro extends MacBook {
 	private String disc;
 	private int screenSize;
 
-	public MacBookPro(String memory, String par1, int par2) {
+	public MacBookPro(String memory, String disc, int screenSize) {
 		this.memory = memory;
 		this.disc = disc;
 		this.screenSize = screenSize;

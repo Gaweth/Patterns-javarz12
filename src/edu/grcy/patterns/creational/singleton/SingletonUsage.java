@@ -3,7 +3,7 @@ package edu.grcy.patterns.creational.singleton;
 public class SingletonUsage {
     public static void main(String[] args) {
         EagerSingleton eagerSingleton = EagerSingleton.getInstance();
-       // EagerSingleton eagerSingleton2 = new EagerSingleton(); = konstruktor jest prywatny, nie da rady
+        //EagerSingleton eagerSingleton2 = new EagerSingleton(); konstruktor prywatny, nie da się
 
         System.out.println(eagerSingleton.getOtherField());
 
@@ -14,8 +14,8 @@ public class SingletonUsage {
 
         LazySingleton lazySingleton = LazySingleton.getInstance();
         /**
-         * double lock singleton - laz ale z podowjnym sprawdzniem
-         * nadaje sie do watkow Enim - obecnie czesniej spotykany typ singletona
+         * Double lock singleton - LAZY ale z podwójnym sprawdzaniem, nadaje się do wątków
+         * Enum - obecnie częściej spotykany typ singletona
          */
     }
 }

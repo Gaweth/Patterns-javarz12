@@ -4,6 +4,6 @@ public class DatabaseLogger implements MessageLogger {
 
     @Override
     public void log(String message) throws Exception {
-        System.out.println("writting to database: " + message);
+        System.out.println("Writing to database:" + message);
     }
 }
